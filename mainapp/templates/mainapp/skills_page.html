@@ -1,0 +1,18 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    {{ data.title }}
+{% endblock %}
+
+{% block content %}
+        <div class="main-cont">
+            <h2 class="title-page">{{ data.title }}</h2>
+            <div class="main-article">
+                <p class="main-title">{{ data.title }}</p>
+                <p class="main-text">
+                    {{ data.description }}
+                </p>
+                <img src="{{ data.key_skills_img.url }}">
+            </div>
+        </div>
+{% endblock %}

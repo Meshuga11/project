@@ -1,0 +1,73 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    {{ data.title }}
+{% endblock %}
+
+{% block content %}
+    <div class="main-cont">
+        <h2 class="title-page">Последние вакансии</h2>
+        {% if data %}
+
+        <ul class="list-reset">
+            {% for el in data %}
+
+            <li class="vac-list-item">
+                <p class="vac-name">{{ el.name }}</p>
+                <div>
+                    <p class="name">Описание</p>
+                    <p class="vac-">{{ el.description }}</p>
+                </div>
+                <div>
+                    <p class="name">Навыки:</p>
+                    <p class="vac-">
+                        {{el.key_skills}}
+                    </p>
+                </div>
+                <div>
+                    <p class="name">Компания</p>
+                    <p class="vac-">{{ el.employer }}</p>
+                </div>
+                <div>
+                    <p class="name">Оклад</p>
+                    <p class="vac-">{{ el.salary }}</p>
+                </div>
+                <div>
+                    <p class="name">Регион</p>
+                    <p class="vac-">{{ el.area }}</p>
+                </div>
+                <div>
+                    <p class="name">Оклад</p>
+                    <p class="vac-">{{ el.published_at }}</p>
+                </div>
+                <div>
+                    <p class="name">Ссылка</p>
+                    <a href="{{ el.alternate_url }}">{{ el.alternate_url }}</a>
+                </div>
+
+
+
+
+
+            </li>
+
+        {% endfor %}
+        </ul>
+
+<!--        <table class="brd table1">-->
+<!--        {% for el in data %}-->
+<!--        <tr>-->
+<!--            <td>{{ el.name }}</td>-->
+<!--            <td>{{ el.description }}}</td>-->
+<!--            <td>{{ el.key_skills }}</td>-->
+<!--            <td>{{ el.employer }}</td>-->
+<!--            <td>{{ el.salary }}</td>-->
+<!--            <td>{{ el.area }}</td>-->
+<!--            <td>{{ el.published_at }}</td>-->
+<!--            <td>{{ el.alternate_url }}</td>-->
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--        </table>-->
+<!--        {% endif %}-->
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    {{ data.title }}
+{% endblock %}
+
+{% block content %}
+            <div class="main-cont">
+                <h2 class="title-page">{{ data.title }}</h2>
+                <div class="main-article flex-column">
+                    <p class="main-title">{{ data.description }}</p>
+
+                    <img src="{{ data.slr_img.url }}">
+                    <img src="{{ data.count_vac_img.url }}">
+                </div>
+                {% if table %}
+                    <div class="flex table-cont" style="justify-content: center;">
+                        <table class="brd table1">
+                            <tr>
+                                {% for key in titles %}
+                                <th>{{ key }}</th>
+                                {% endfor %}
+                            </tr>
+
+                            {% for el in table %}
+                                <tr>
+                                    {% for key, value in el.items %}
+                                    <td>{{ value }}</td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+
+{% endblock %}

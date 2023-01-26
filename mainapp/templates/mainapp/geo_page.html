@@ -1,0 +1,59 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    {{ data.title }}
+{% endblock %}
+
+{% block content %}
+        <div class="main-cont">
+            <h2 class="title-page">{{ data.title }}</h2>
+
+            <div class="main-article">
+                <p class="main-title">{{ data.title }}</p>
+                <p class="main-text">
+                    {{ data.description }}
+                </p>
+                <div class="flex" style="justify-content: space-evenly">
+                    <img src="{{ data.slr_img.url }}" style="width: calc(100% * 0.75 - 50px);">
+                    <img src="{{ data.count_vac_img.url }}" style="width: calc(100% * 0.35);
+}">
+                </div>
+            </div>
+            <div class="flex table-cont"  style="justify-content: space-evenly;">
+                {% if table2 %}
+            <table class="brd table1">
+                    <tr>
+                        {% for key in titles2 %}
+                            <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                {% for el in table2 %}
+                    <tr>
+                        {% for key, value in el.items %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        {% if table3 %}
+            <table class="brd table1">
+                    <tr>
+                        {% for key in titles3 %}
+                            <th>{{ key }}</th>
+                        {% endfor %}
+                    </tr>
+                {% for el in table3 %}
+                    <tr>
+                        {% for key, value in el.items %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+            </div>
+        </div>
+
+{% endblock %}

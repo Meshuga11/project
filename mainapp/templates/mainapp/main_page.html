@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+{{ data.title }}
+{% endblock %}
+
+{% block content %}
+        <div class="main-img flex">
+            <div class="main-img-cont">
+                <h2 class="title-page" style="margin: 0;">Главная</h2>
+            </div>
+        </div>
+        <div class="main-cont">
+            <div class="main-article">
+                <p class="main-title">{{ data.title }}</p>
+                <p class="main-text">
+                    {{ data.description | safe }}
+                </p>
+            </div>
+        </div>
+{% endblock %}
